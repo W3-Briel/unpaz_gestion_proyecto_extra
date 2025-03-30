@@ -1,19 +1,42 @@
 const proyecto = require("./Proyecto");
+
+
 const { Tarea, TareaCompuesta } = require("./Tareas");
 
-const t1 = new Tarea("1", 3);
-const t2 = new TareaCompuesta("2", 5, [
-  new Tarea("2.1", 6),
-  new TareaCompuesta("2.2", 8, [new Tarea("2.2.1", 3), new Tarea("2.2.2", 4)]),
-]);
-const t3 = new TareaCompuesta("3", 7, [
-  new Tarea("3.1", 6),
-  new Tarea("3.2", 3),
-]);
+const t1 = new Tarea({
+  codigo: "1",
+  duracion: 3
+});
 
-proyecto.agregarTarea(t1);
-proyecto.agregarTarea(t2);
-proyecto.agregarTarea(t3);
+const t2 = new TareaCompuesta({
+  codigo: "2",
+  duracion: 5,
+  tareas: [
+    new Tarea({codigo: "2.1",duracion: 6}),
+    new TareaCompuesta({codigo: "2.2",duracion: 8,tareas: [
+        new Tarea({codigo: "2.2.1",duracion: 3}),
+        new Tarea({codigo: "2.2.2",duracion: 4})
+      ]
+    })
+  ]
+});
+
+const t3 = new TareaCompuesta({
+  codigo: "3",
+  duracion: 7,
+  tareas: [
+    new Tarea({
+      codigo: "3.1",
+      duracion: 6
+    }),
+    new Tarea({
+      codigo: "3.2",
+      duracion: 3
+    })
+  ]
+});
+
+proyecto.agregarTarea(t1,t2,t3);
 
 proyecto.mostrarTareas();
-console.log(`Duracion Total: ${proyecto.getDuracion()}`);
+console.log(`Duracion Total: ${proyecto.getDuracionTotal()}`);

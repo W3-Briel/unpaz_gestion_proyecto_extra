@@ -1,22 +1,23 @@
 class Proyecto {
+  tareas;
   constructor() {
     this.tareas = [];
   }
 
-  agregarTarea(tarea) {
-    this.tareas.push(tarea);
+  agregarTarea(...tarea) {
+    this.tareas.push(...tarea);
   }
 
-  getDuracion() {
+  cleanTareas() {
+    this.tareas = [];
+  }
+
+  getDuracionTotal() {
     return this.tareas.reduce((acum, tarea) => acum + tarea.getDuracion(), 0);
   }
 
   mostrarTareas() {
     this.tareas.forEach((tarea) => tarea.mostrarTarea());
-  }
-
-  cleanTareas() {
-    this.tareas = [];
   }
 }
 
