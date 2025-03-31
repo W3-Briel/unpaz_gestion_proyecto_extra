@@ -1,3 +1,4 @@
+const Proyecto = require("./Proyecto");
 const proyecto = require("./Proyecto");
 
 
@@ -24,4 +25,4 @@ const t3 = new TareaCompuesta({codigo: "3",duracion: 7,
 
 proyecto.agregarTarea(t1,t2,t3);
 proyecto.mostrarTareas();
-console.log(`Duracion Total: ${proyecto.getDuracionTotal()}`);
+console.log(`Duracion Total: ${proyecto.getDuracionTotal()}, Costo Total: ${proyecto.getCostoTotal()}`);
