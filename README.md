@@ -50,7 +50,9 @@ npm test
 ```
 
 Deberian tenes una salida similar a la siguiente por la consola
-![test](./img/test.png)
+
+![test](https://github.com/user-attachments/assets/1d6c7eba-2d97-49d7-bb5e-5f51e6d3a0ad)
+
 
 ### Ejecutar la aplicación
 
