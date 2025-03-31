@@ -51,23 +51,10 @@ class TareaCompuesta {
   }
 
   mostrarTarea() {
-    console.log(`Codigo: ${this.codigo} - Duracion: ${this.duracion} - complejidad: ${this.complejidad.getName()} - Costo: ${this.getCosto()}`)
+    console.group(`Codigo: ${this.codigo} - Duracion: ${this.duracion} - complejidad: ${this.complejidad.getName()} - Costo-branch: ${this.getCosto()}`)
     this.tareas.forEach((tarea) => tarea.mostrarTarea());
+    console.groupEnd()
   }
 }
-
-/////////////////////////////////////////////////////////
-// let tarea1 = new Tarea({
-//   codigo: "1.2.12",
-//   duracion: 10,
-//   complejidad: COMPLEJIDAD.media
-// })
-
-// let tarea2 = new TareaCompuesta({
-//   codigo: "1.3.4.5",
-//   tareas: [tarea1,tarea1,tarea1],
-//   duracion: 10,
-//   complejidad: COMPLEJIDAD.maxima
-// })
 
 module.exports = { Tarea, TareaCompuesta, COMPLEJIDAD}
