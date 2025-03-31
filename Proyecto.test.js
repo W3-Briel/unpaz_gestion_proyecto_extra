@@ -1,5 +1,5 @@
 const proyecto = require("./Proyecto");
-const { Tarea, TareaCompuesta } = require("./Tareas");
+const { Tarea, TareaCompuesta, COMPLEJIDAD } = require("./Tareas");
 
 describe("Duracion Proyecto", () => {
   let t1;
@@ -7,15 +7,26 @@ describe("Duracion Proyecto", () => {
   let t3;
 
   beforeEach(() => {
-    t1 = new Tarea("1", 3);
-    t2 = new TareaCompuesta("2", 5, [
-      new Tarea("2.1", 6),
-      new TareaCompuesta("2.2", 8, [
-        new Tarea("2.2.1", 3),
-        new Tarea("2.2.2", 4),
-      ]),
-    ]);
-    t3 = new TareaCompuesta("3", 7, [new Tarea("3.1", 6), new Tarea("3.2", 3)]);
+    t1 = new Tarea({codigo:"1",duracion: 3});
+    t2 = new TareaCompuesta({codigo:"2",duracion: 5,
+      tareas: [
+        new Tarea({codigo: "2.1", duracion: 6}),
+        new TareaCompuesta({codigo: "2.2", duracion: 8,
+          tareas: [
+            new Tarea({codigo: "2.2.1", duracion: 3}),
+            new Tarea({codigo: "2.2.2", duracion: 4})
+          ]
+        })
+      ]
+    });
+
+    t3 = new TareaCompuesta({codigo: "3", duracion: 7,
+      tareas: [
+        new Tarea({codigo: "3.1", duracion: 6}),
+        new Tarea({codigo: "3.2", duracion: 3})
+      ]
+    });
+
 
     proyecto.agregarTarea(t1);
     proyecto.agregarTarea(t2);
@@ -39,6 +50,6 @@ describe("Duracion Proyecto", () => {
   });
 
   test("La duración total del proyecto debería ser 45", () => {
-    expect(proyecto.getDuracion()).toBe(45);
+    expect(proyecto.getDuracionTotal()).toBe(45);
   });
 });
