@@ -10,7 +10,7 @@ const t2 = new TareaCompuesta({codigo: "2",duracion: 5,
     new Tarea({codigo: "2.1",duracion: 6}),
     new TareaCompuesta({codigo: "2.2",duracion: 8,
       tareas: [
-        new Tarea({codigo: "2.2.1",duracion: 20,complejidad: COMPLEJIDAD.maxima}),
+        new Tarea({codigo: "2.2.1",duracion: 20}),
         new Tarea({codigo: "2.2.2",duracion: 4})
       ]
     })
