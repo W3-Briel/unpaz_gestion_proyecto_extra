@@ -7,8 +7,10 @@ Los proyectos se componen de tareas y las tareas de subtareas, que a su vez, las
 ## Requerimientos a resolver
 
 - Determinar la duración total de una tarea simple y compuesta.
+- Determinar el costo total de una tarea simple y compuesta.
 - Determinar la duración total del proyecto que incluya tareas simples y compuestas.
-- Mostrar la estrcutura del proyecto, listando las tareas con su código y duración.
+- Determinar la costo total del proyecto que incluya tareas simples y compuestas.
+- Mostrar la estrcutura del proyecto, listando las tareas con su código, duración y costo.
 
 ### Estructura para los Test
 
@@ -59,4 +61,6 @@ npm start
 ```
 
 Deberian tenes una salida similar a la siguiente por la consola
-![salida](./img/salida.png)
+
+![salida](https://github.com/user-attachments/assets/d7fece80-e881-4095-a69e-dac1740a5354)
+
