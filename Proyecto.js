@@ -15,7 +15,7 @@ class Proyecto {
   getDuracionTotal() {
     return this.tareas.reduce((acum, tarea) => acum + tarea.getDuracion(), 0);
   }
-  getCostoTotal(){
+  getCostoTotal() {
     return this.tareas.reduce((acum, tarea) => acum + tarea.getCosto(), 0);
   }
 
